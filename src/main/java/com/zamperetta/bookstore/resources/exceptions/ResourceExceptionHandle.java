@@ -13,7 +13,7 @@ import com.zamperetta.bookstore.service.exceptions.ObjectNotFoundException;
 public class ResourceExceptionHandle {
 
 	@ExceptionHandler(ObjectNotFoundException.class)
-	public ResponseEntity<StandartError> objectNotFoundExcpetion(ObjectNotFoundException e, ServletRequest request){
+	public ResponseEntity<StandardError> objectNotFoundExcpetion(ObjectNotFoundException e, ServletRequest request){
 		StandardError error = new StandardError(System.currentTimeMillis(), HttpStatus.NOT_FOUND.value(), e.getMessage());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
 	}
